@@ -123,7 +123,7 @@ export const Header = () => {
               />
             </Container>
             <Search>
-              <SearchIconWrapper>
+              <SearchIconWrapper >
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase

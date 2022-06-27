@@ -21,13 +21,6 @@ z-index: -1;
 
 `
 
-export const Titles = styled.p`
-margin-top: 8px;
-margin-bottom: 0;
-color: white;
-`
-
-
 export const MovieCard = styled.div`
 position: relative;
 width: 200px;
@@ -35,6 +28,7 @@ height: 300px;
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
+
 padding: 24px;
 
 overflow: hidden;
@@ -53,6 +47,28 @@ background: linear-gradient(180deg,
     }
 
 `
+
+export const Titles = styled.h4`
+margin-top: 8px;
+margin-bottom: 0;
+color: white;
+`
+
+// export  const Discription = styled.p`
+// overflow: auto;
+// color: white;
+// flex-shrink: 1;
+// max-height: 0;
+// opacity: 0;
+// margin: 0;
+// transition: 0.3s;
+//  &:hover {
+//   max-height: 300px;
+//   margin: 10px 0;
+//   opacity: 1;
+// }
+
+// ` 
 
 // export const Grid = styled.div`
 // display: grid;
