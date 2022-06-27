@@ -1,12 +1,9 @@
 body,
 html {
   margin: 0;
-  height: 982px;
 }
 
 .App {
   font-family: sans-serif;
   box-sizing: border-box;
 }
-
-

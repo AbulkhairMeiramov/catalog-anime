@@ -1,17 +1,17 @@
+import { Link, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { RegistrationForm } from "../components/RegistrationForm";
-import { signUpUser } from "../fetchers/signUpUser";
+import { LoginForm } from "../components/LoginForm";
+import { signInUser } from "../fetchers/signInUser";
 import { setToken } from "../store/slice/auth";
 
-export const RegistrationPage = () => {
+export const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleUserCreated = useCallback(
+  const handleAuthSubmit = useCallback(
     (user) => {
-      signUpUser({ email: user.email, password: user.password })
+      signInUser({ email: user.email, password: user.password })
         .then(({ idToken }) => {
           dispatch(setToken(idToken));
           navigate("/home");
@@ -26,15 +26,15 @@ export const RegistrationPage = () => {
   return (
     <div
       style={{
-        marginTop: '10%',
+        marginTop: "15%",
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
       }}
     >
-      <RegistrationForm onUserCreated={handleUserCreated} />
-      <p>
-        Already registered? <Link to="/login">Sign In</Link>
+      <LoginForm onAuthSubmit={handleAuthSubmit} />
+      <p style={{ textAlign: "left" }}>
+        No account? <Link to="/registration">Create one</Link>
       </p>
     </div>
   );
