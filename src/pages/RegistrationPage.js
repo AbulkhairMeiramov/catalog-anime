@@ -26,16 +26,33 @@ export const RegistrationPage = () => {
   return (
     <div
       style={{
-        marginTop: '10%',
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
+        backgroundImage: `url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)`,
+        backgroundColor: "green",
+        overFlow: "auto",
+        minHeight: "100vh",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center top",
       }}
     >
-      <RegistrationForm onUserCreated={handleUserCreated} />
-      <p>
-        Already registered? <Link to="/login">Sign In</Link>
-      </p>
+      <div
+        style={{
+          paddingTop: "14%",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <RegistrationForm onUserCreated={handleUserCreated} />
+        <p style={{ textAlign: "left", color: "white" }}>
+          Already registered?{" "}
+          <Link
+            to="/login"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            Sign In
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
