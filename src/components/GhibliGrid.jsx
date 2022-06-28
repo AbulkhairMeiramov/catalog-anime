@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,10 +19,14 @@ export const GhibliGrid = () => {
 
   return (
     <>
-      <Box sx={{ marginTop: "100px" }}>
-        
-        <Container>
-          <Grid container spacing={2} justifyContent="center" >
+    <Typography component="h1" variant="h4" mt={2} 
+                textAlign="center" color="#388e3c"
+                >
+      The Movies
+    </Typography>
+      <Box sx={{ marginTop: "16px" }}>
+        <Container maxWidth="md">
+          <Grid container spacing={2} justifyContent="center">
             {movies.map((movie) => (
               <GhibliCard movie={movie} key={movie.id} />
             ))}

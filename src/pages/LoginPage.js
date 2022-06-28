@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { LoginForm } from "../components/LoginForm";
 import { signInUser } from "../fetchers/signInUser";
 import { setToken } from "../store/slice/auth";
+import { LinkBase } from "../components/styles/LinkBase";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export const LoginPage = () => {
     <div
       style={{
         backgroundImage: `url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)`,
-        backgroundColor: "green",
+        backgroundColor: "#388e3c",
         overFlow: "auto",
         minHeight: "100vh",
         backgroundRepeat: "no-repeat",
@@ -44,13 +45,8 @@ export const LoginPage = () => {
       >
         <LoginForm onAuthSubmit={handleAuthSubmit} />
         <p style={{ textAlign: "left", color: "white" }}>
-          No account?{" "}
-          <Link
-            to="/registration"
-            style={{ color: "inherit", textDecoration: "inherit" }}
-          >
-            Create one
-          </Link>
+          No account? 
+          <LinkBase to="/registration">Create one</LinkBase>
         </p>
       </div>
     </div>

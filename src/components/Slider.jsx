@@ -48,6 +48,7 @@ export const Slider = () => {
           <div
             className={slideIndex === index + 1 ? "dot active" : "dot"}
             onClick={() => moveDot(index + 1)}
+            key={index}
           ></div>
         ))}
       </div>

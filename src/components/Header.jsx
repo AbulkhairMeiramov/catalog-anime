@@ -9,14 +9,12 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { GhibliGrid } from "./GhibliGrid";
 import {
   Search,
   SearchIconWrapper,
   StyledInputBase,
 } from "./styles/HeaderStyles";
 
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
@@ -25,6 +23,7 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import { Container } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { setRemoveToken } from "../store/slice/auth";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -110,12 +109,15 @@ export const Header = () => {
       <AppBar style={{ position: "sticky" }} color="success">
         <Toolbar>
           <Container>
-            <img
-              style={{ maxWidth: "100px" }}
-              src="https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png"
-              alt=""
-            />
+            <Link to="/home">
+              <img
+                style={{ maxWidth: "100px" }}
+                src="https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png"
+                alt="Studio Ghibli"
+              />
+            </Link>
           </Container>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

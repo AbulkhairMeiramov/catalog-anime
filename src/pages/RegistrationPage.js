@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { RegistrationForm } from "../components/RegistrationForm";
+import { LinkBase } from "../components/styles/LinkBase";
 import { signUpUser } from "../fetchers/signUpUser";
 import { setToken } from "../store/slice/auth";
 
@@ -27,7 +28,7 @@ export const RegistrationPage = () => {
     <div
       style={{
         backgroundImage: `url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)`,
-        backgroundColor: "green",
+        backgroundColor: "#388e3c",
         overFlow: "auto",
         minHeight: "100vh",
         backgroundRepeat: "no-repeat",
@@ -44,13 +45,8 @@ export const RegistrationPage = () => {
       >
         <RegistrationForm onUserCreated={handleUserCreated} />
         <p style={{ textAlign: "left", color: "white" }}>
-          Already registered?{" "}
-          <Link
-            to="/login"
-            style={{ color: "inherit", textDecoration: "inherit" }}
-          >
-            Sign In
-          </Link>
+          Already registered?
+           <LinkBase to="/login">Sign In</LinkBase>
         </p>
       </div>
     </div>

@@ -4,15 +4,22 @@ import { Slider } from "../components/Slider";
 import { Container } from "@mui/system";
 import { AuthorisedPage } from "./AuthorisedPage";
 import { GhibliGrid } from "../components/GhibliGrid";
+import { Switch } from "react-router-dom";
+import { Footer } from "../components/Footer";
 
 export const HomePage = () => {
   return (
-    <AuthorisedPage>
-      <Header />
-      <Slider />
-      <Container>
-        <GhibliGrid />
-      </Container>
-    </AuthorisedPage>
+    <>
+      <AuthorisedPage>
+        <Header />
+
+        <Slider />
+        <Container>
+          <GhibliGrid />
+        </Container>
+
+        <Footer />
+      </AuthorisedPage>
+    </>
   );
 };
