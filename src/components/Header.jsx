@@ -23,8 +23,12 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Container } from "@mui/system";
+import { useDispatch, useSelector } from "react-redux";
+import { setRemoveToken } from "../store/slice/auth";
 
 export const Header = () => {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.auth);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -65,8 +69,7 @@ export const Header = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={() => dispatch(setRemoveToken())}>Logout</MenuItem>
     </Menu>
   );
 
@@ -120,6 +123,7 @@ export const Header = () => {
               <img
                 style={{ maxWidth: "100px" }}
                 src="https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png"
+                alt=""
               />
             </Container>
             <Search>
