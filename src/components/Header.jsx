@@ -106,9 +106,9 @@ export const Header = () => {
   );
 
   return (
-    <>
+    <div style={{ marginBottom: "10px" }}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" color="success">
+        <AppBar position="" color="success">
           <Toolbar>
             <Container>
               <img
@@ -118,7 +118,7 @@ export const Header = () => {
               />
             </Container>
             <Search>
-              <SearchIconWrapper >
+              <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
@@ -157,9 +157,6 @@ export const Header = () => {
         {renderMobileMenu}
         {renderMenu}
       </Box>
-      <Container>
-        <GhibliGrid />
-      </Container>
-    </>
+    </div>
   );
 };
