@@ -1,12 +1,18 @@
-import React from 'react'
-import { Header } from '../components/Header'
-import { AuthorisedPage } from './AuthorisedPage'
+import React from "react";
+import { Header } from "../components/Header";
+import { Slider } from "../components/Slider";
+import { Container } from "@mui/system";
+import { AuthorisedPage } from "./AuthorisedPage";
+import { GhibliGrid } from "../components/GhibliGrid";
 
-export const  HomePage = () => {
+export const HomePage = () => {
   return (
     <AuthorisedPage>
-        <Header/>
-        </AuthorisedPage>
-  )
-}
-
+      <Header />
+      <Slider />
+      <Container>
+        <GhibliGrid />
+      </Container>
+    </AuthorisedPage>
+  );
+};
