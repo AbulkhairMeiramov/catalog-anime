@@ -20,6 +20,7 @@ export const GhibliGrid = () => {
   return (
     <>
       <Box sx={{ marginTop: "100px" }}>
+        
         <Container>
           <Grid container spacing={2} justifyContent="center" >
             {movies.map((movie) => (

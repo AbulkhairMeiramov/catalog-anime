@@ -2,13 +2,17 @@ import styled from '@emotion/styled';
 
 
 
-export const Img = styled.img`
-display: block;
+// export const Img = styled.img`
+// display: block;
 
+
+// max-width: 100%;
+
+
+// `
 // position: absolute;
 // left: 0;
 // top: 0;
-max-width: 100%;
 // z-index: -1;
 //   object-fit: cover;
 //   object-position: center center;
@@ -18,8 +22,6 @@ max-width: 100%;
 //     width: 130%;
 //     height: 130%; 
 //   }
-
-`
 
 // export const MovieCard = styled.div`
 // position: relative;
