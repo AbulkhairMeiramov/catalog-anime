@@ -35,7 +35,7 @@ export const Slider = () => {
             key={obj.id}
           >
             <img
-              src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.png`}
+              src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`}
               alt="slider"
             ></img>
           </div>
