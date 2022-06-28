@@ -7,14 +7,14 @@ export const GhibliCard = ({ movie }) => {
     <>
     {/* <Link to={`/movie?${movie.id}`}> */}
       <Grid item key={movie.id} xs={12} sm={6} md={4}>
-        <MovieCard>
+        {/* <MovieCard> */}
           <Img
             src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.image}`}
             alt="poster"
           />
           <Titles>{movie.title} </Titles>
     
-        </MovieCard>
+        {/* </MovieCard> */}
       </Grid>
       {/* </Link> */}
     </>

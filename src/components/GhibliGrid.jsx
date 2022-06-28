@@ -21,7 +21,7 @@ export const GhibliGrid = () => {
     <>
       <Box sx={{ marginTop: "100px" }}>
         <Container>
-          <Grid container spacing={2} >
+          <Grid container spacing={2} justifyContent="center" >
             {movies.map((movie) => (
               <GhibliCard movie={movie} key={movie.id} />
             ))}

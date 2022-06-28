@@ -110,15 +110,6 @@ export const Header = () => {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="fixed" color="success">
           <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
             <Container>
               <img
                 style={{ maxWidth: "100px" }}
