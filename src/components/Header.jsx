@@ -106,7 +106,7 @@ export const Header = () => {
   );
 
   return (
-    <div style={{ marginBottom: "10px" }}>
+    <div>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="" color="success">
           <Toolbar>
