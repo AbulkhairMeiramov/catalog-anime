@@ -14,6 +14,7 @@ const LoginWrapper = styled("div")`
   border-radius: 4px;
   padding: 16px;
   width: 400px;
+  background: white;
 `;
 
 export const LoginForm = ({ onAuthSubmit }) => {

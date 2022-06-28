@@ -26,16 +26,33 @@ export const LoginPage = () => {
   return (
     <div
       style={{
-        marginTop: "15%",
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
+        backgroundImage: `url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)`,
+        backgroundColor: "green",
+        overFlow: "auto",
+        minHeight: "100vh",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center top",
       }}
     >
-      <LoginForm onAuthSubmit={handleAuthSubmit} />
-      <p style={{ textAlign: "left" }}>
-        No account? <Link to="/registration">Create one</Link>
-      </p>
+      <div
+        style={{
+          paddingTop: "18%",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <LoginForm onAuthSubmit={handleAuthSubmit} />
+        <p style={{ textAlign: "left", color: "white" }}>
+          No account?{" "}
+          <Link
+            to="/registration"
+            style={{ color: "inherit", textDecoration: "inherit" }}
+          >
+            Create one
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

@@ -14,6 +14,7 @@ const Wrapper = styled("form")`
   border: 1px solid #c1c2c3;
   padding: 16px;
   border-radius: 4px;
+  background: white;
   h4 {
     margin-top: 0;
   }
