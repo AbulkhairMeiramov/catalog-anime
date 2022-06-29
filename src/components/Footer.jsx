@@ -1,7 +1,7 @@
-import { Grid } from "@mui/material";
-import { Box, Container } from "@mui/material";
-import React from "react";
-import { LinkBase } from "./styles/LinkBase";
+import { Grid } from '@mui/material'
+import { Box, Container } from "@mui/material"
+import React from 'react'
+import { LinkBase } from './styles/LinkBase'
 
 export const Footer = () => {
   return (
