@@ -19,7 +19,7 @@ export const GhibliCard = ({ movie }) => {
     <>
     
       <Grid item key={movie.id} xs={12} sm={6} md={4}>
-        <Card>
+        <Card sx={{ height: "100%"}}>
         <LinkBase to={`/home/${movie.id}`}>
           <CardMedia
             sx={{ paddingTop: "150%" }}

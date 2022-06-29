@@ -1,8 +1,6 @@
 import { Grid } from '@mui/material'
 import { Box, Container } from "@mui/material"
-import { color } from '@mui/system'
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { LinkBase } from './styles/LinkBase'
 
 export const  Footer = ()=> {

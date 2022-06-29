@@ -12,12 +12,10 @@ export const HomePage = () => {
     <>
       <AuthorisedPage>
         <Header />
-
         <Slider />
         <Container>
           <GhibliGrid />
         </Container>
-
         <Footer />
       </AuthorisedPage>
     </>
