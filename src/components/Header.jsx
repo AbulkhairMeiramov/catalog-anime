@@ -1,14 +1,19 @@
 import {
   AppBar,
-  Badge,
+  Avatar,
   Box,
   IconButton,
   Menu,
   MenuItem,
   Toolbar,
+  Tooltip,
   Typography,
 } from "@mui/material";
+<<<<<<< Updated upstream
 import React from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> Stashed changes
 import {
   Search,
   SearchIconWrapper,
@@ -16,95 +21,32 @@ import {
 } from "./styles/HeaderStyles";
 
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreIcon from "@mui/icons-material/MoreVert";
 import { Container } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { setRemoveToken } from "../store/slice/auth";
+<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
+=======
+import { stringAvatar } from "../utils/getAvatarString";
+>>>>>>> Stashed changes
 
-export const Header = () => {
+const settings = ["Logout"];
+
+export const Header = ({ rightContent, ...rest }) => {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.auth);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
   };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={() => dispatch(setRemoveToken())}>Logout</MenuItem>
-    </Menu>
-  );
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
 
   return (
+<<<<<<< Updated upstream
     <>
       <AppBar style={{ position: "sticky" }} color="success">
         <Toolbar>
@@ -158,5 +100,75 @@ export const Header = () => {
       {renderMobileMenu}
       {renderMenu}
     </>
+=======
+    <AppBar position="sticky" {...rest} style={{ background: "green" }}>
+      <Toolbar>
+        <Container>
+          <img
+            style={{ maxWidth: "100px" }}
+            src="https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png"
+            alt=""
+          />
+        </Container>
+        <Box sx={{ flexGrow: 1 }} />
+        <Search>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open menu">
+            <div>
+              {rightContent}
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0 }}
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <Avatar
+                  size="small"
+                  {...stringAvatar(currentUser.email)}
+                  style={{ background: "white", color: "green" }}
+                />
+              </IconButton>
+            </div>
+          </Tooltip>
+          <Menu
+            sx={{ mt: "45px" }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem
+                key={setting}
+                onClick={() => dispatch(setRemoveToken())}
+              >
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      </Toolbar>
+    </AppBar>
+>>>>>>> Stashed changes
   );
 };
