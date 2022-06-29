@@ -1,23 +1,10 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Grid,
-  Link,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import React from "react";
-import { Navigate } from "react-router-dom";
-import MoviePage from "../pages/MoviePage";
 import { LinkBase } from "./styles/LinkBase";
-import { Img, MovieCard, Titles } from "./styles/Poster";
 
 export const GhibliCard = ({ movie }) => {
   return (
     <>
-    
       <Grid item key={movie.id} xs={12} sm={6} md={4}>
         <Card sx={{ height: "100%"}}>
         <LinkBase to={`/home/${movie.id}`}>
@@ -39,7 +26,6 @@ export const GhibliCard = ({ movie }) => {
           </div> */}
         </Card>
       </Grid>
-     
     </>
   );
 };
