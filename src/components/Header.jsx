@@ -21,6 +21,9 @@ import { Container } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { setRemoveToken } from "../store/slice/auth";
 import { stringAvatar } from "../utils/getAvatarString";
+import About from "./About";
+import { LinkBase } from "./styles/LinkBase";
+import { AboutPage } from "../pages/AboutPage";
 
 const settings = ["Logout"];
 
@@ -47,6 +50,8 @@ export const Header = ({ rightContent, ...rest }) => {
             alt=""
           />
         </Container>
+          <LinkBase to= "/about">About us</LinkBase>
+          <LinkBase to="/quiz">Quiz</LinkBase>
         <Box sx={{ flexGrow: 1 }} />
         <Search>
           <SearchIconWrapper>
