@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
-import { Footer } from '../components/Footer'
-import { Header } from '../components/Header'
-import { Quiz } from '../components/Quiz'
-import { AuthorisedPage } from './AuthorisedPage'
+import React from "react";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+import { Quiz } from "../components/Quiz";
+import { AuthorisedPage } from "./AuthorisedPage";
 
-export const  QuizPage = () => {
-
+export const QuizPage = () => {
   return (
-   <>
-     <AuthorisedPage>
-   <Header/>
-   <Quiz/>
-   <Footer/>
-   </AuthorisedPage>
-
-   </>
-  )
-}
-
+    <>
+      <AuthorisedPage>
+        <Header />
+        <Quiz />
+        <Footer />
+      </AuthorisedPage>
+    </>
+  );
+};

@@ -41,11 +41,12 @@ export const LoginPage = () => {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
+          justifyContent: "center",
         }}
       >
         <LoginForm onAuthSubmit={handleAuthSubmit} />
         <p style={{ textAlign: "left", color: "white" }}>
-          No account? 
+          No account?
           <LinkBase to="/registration">Create one</LinkBase>
         </p>
       </div>
