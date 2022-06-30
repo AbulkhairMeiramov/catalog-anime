@@ -14,9 +14,7 @@ import { Container } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { setRemoveToken } from "../store/slice/auth";
 import { stringAvatar } from "../utils/getAvatarString";
-import About from "./About";
 import { LinkBase } from "./styles/LinkBase";
-import { AboutPage } from "../pages/AboutPage";
 
 const settings = ["Logout"];
 
@@ -37,15 +35,22 @@ export const Header = ({ rightContent, ...rest }) => {
     <AppBar position="sticky" {...rest} style={{ background: "green" }}>
       <Toolbar>
         <Container>
-          <img
-            style={{ maxWidth: "100px" }}
-            src="https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png"
-            alt=""
-          />
+          <LinkBase to="/home">
+            <div>
+              <img
+                style={{ maxWidth: "100px" }}
+                src="https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png"
+                alt=""
+              />
+            </div>
+          </LinkBase>
         </Container>
-          <LinkBase to= "/about">About us</LinkBase>
-          <LinkBase to="/quiz">Quiz</LinkBase>
-        <Box sx={{ flexGrow: 1 }} />
+
+        <Box sx={{ flexGrow: 0 }}>
+          <LinkBase style={{ marginRight: "20px" }} to="/quiz">
+            Quiz
+          </LinkBase>
+        </Box>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open menu">
             <div>

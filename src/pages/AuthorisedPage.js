@@ -23,7 +23,17 @@ export const AuthorisedPage = ({ children }) => {
   }, [token, dispatch]);
 
   if (token && !currentUser) {
-    return <CircularProgress />;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress style={{ color: "green" }} />
+      </div>
+    );
   }
 
   if (token && currentUser) {

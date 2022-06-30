@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import ReactPlayer from "react-player";
 
 const StyledBox = styled(Box)`
-  width: 600px;
+  width: 530px;
   background: white;
   position: absolute;
   top: 50%;
@@ -23,7 +23,7 @@ export const VideoPlayerModal = (props) => {
     <Modal {...props} open={modalOpened}>
       <StyledBox>
         <ReactPlayer
-          width="600px"
+          width="530px"
           height="340px"
           url="https://www.youtube.com/watch?v=z9Ug-3qhrwY&feature=youtu.be"
         />
