@@ -19,15 +19,19 @@ export const GhibliGrid = () => {
 
   return (
     <>
-    <Typography component="h1" variant="h4" mt={2} 
-                textAlign="center" color="#388e3c"
-                >
-      The Movies
-    </Typography>
+      <Typography
+        component="h1"
+        variant="h4"
+        mt={2}
+        textAlign="center"
+        color="#388e3c"
+      >
+        The Movies
+      </Typography>
       <Box sx={{ marginTop: "16px" }}>
         <Container maxWidth="md">
           <Grid container spacing={2} justifyContent="center">
-            {movies.map((movie) => (
+            {movies?.map((movie) => (
               <GhibliCard movie={movie} key={movie.id} />
             ))}
           </Grid>

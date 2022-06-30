@@ -1,5 +1,5 @@
 export function required(message) {
-  return message || "Обязательное поле";
+  return message || "Required field";
 }
 
 export function validatePassword(value) {

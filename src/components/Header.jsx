@@ -10,13 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import {
-  Search,
-  SearchIconWrapper,
-  StyledInputBase,
-} from "./styles/HeaderStyles";
-
-import SearchIcon from "@mui/icons-material/Search";
 import { Container } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { setRemoveToken } from "../store/slice/auth";
@@ -53,15 +46,6 @@ export const Header = ({ rightContent, ...rest }) => {
           <LinkBase to= "/about">About us</LinkBase>
           <LinkBase to="/quiz">Quiz</LinkBase>
         <Box sx={{ flexGrow: 1 }} />
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open menu">
             <div>
