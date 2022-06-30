@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registration" element={<RegistrationPage />} />
+<<<<<<< Updated upstream
         <Route path="/home" element={<HomePage/>} />
         <Route path="/home/:id" element={<MoviePage/>} />
         <Route path="/about" element={<AboutPage/>} />
@@ -21,6 +22,10 @@ function App() {
         
 
     
+=======
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/home/:id" element={<MoviePage />} />
+>>>>>>> Stashed changes
       </Routes>
     </div>
   );
