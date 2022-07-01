@@ -5,6 +5,7 @@ import { LoginForm } from "../components/LoginForm";
 import { signInUser } from "../fetchers/signInUser";
 import { setToken } from "../store/slice/auth";
 import { LinkBase } from "../components/styles/LinkBase";
+import "./LoginPage.css";
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -25,27 +26,10 @@ export const LoginPage = () => {
   );
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)`,
-        backgroundColor: "#388e3c",
-        overFlow: "auto",
-        minHeight: "100vh",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center top",
-      }}
-    >
-      <div
-        style={{
-          paddingTop: "18%",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
+    <div className="background-login">
+      <div className="background-login-direction">
         <LoginForm onAuthSubmit={handleAuthSubmit} />
-        <p style={{ textAlign: "left", color: "white" }}>
+        <p className="background-login-link-to-register">
           No account?
           <LinkBase to="/registration"> Create one </LinkBase>
         </p>
