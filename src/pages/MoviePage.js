@@ -2,15 +2,26 @@ import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { loadMovie } from "../store/actions/loadMovie";
 import { useParams } from "react-router-dom";
-import { Button, CardMedia, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
 import { Header } from "../components/Header";
 import { AuthorisedPage } from "./AuthorisedPage";
 import { setModalOpened } from "../store/slice/catalog";
 import { VideoPlayerModal } from "../components/VideoPlayerModal";
+import { Container } from "@mui/system";
+import { ContentCopy } from "@mui/icons-material";
+import { Footer } from "../components/Footer";
 
 function MoviePage() {
   const dispatch = useDispatch();
-  const { movies } = useSelector((state) => state.catalog);
+  const { movie } = useSelector((state) => state.catalog);
   const params = useParams();
   const movieId = params.id;
 
@@ -27,62 +38,67 @@ function MoviePage() {
   return (
     <AuthorisedPage>
       <Header />
-      <div
-        style={{
+      <Container
+        sx={{
           display: "flex",
-          justifyContent: "center",
-          marginLeft: "20%",
-          marginTop: "70px",
+          flexDirection: "row",
+          justifyContent: " center",
+          alignItems: "center",
+          marginTop: "15px",
         }}
       >
-        <div>
-          <CardMedia
-            sx={{
-              width: "220px",
-              height: "330px",
-              marginRight: "50px",
-              marginTop: "20px",
+        {!movie && "loading..."}
+        {movie && (
+          <Grid item xs={12} sm={6} md={4}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: " center",
+              alignItems: "center",
             }}
-            image={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movies.image}`}
-          />
-          <div style={{ width: "220px", marginTop: "10px" }}>
-            <Button
-              color="primary"
-              size="large"
-              variant="outlined"
-              style={{ width: "220px", height: "50px" }}
-              onClick={() => dispatch(setModalOpened(true))}
-            >
-              View Trailer
-            </Button>
-            <VideoPlayerModal onClose={() => dispatch(setModalOpened(false))} />
+          >
+            <Card sx={{ height: "100%", width: 390 }}>
+              <CardMedia
+                sx={{ paddingTop: "150%" }}
+                image={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.image}`}
+              />
+              <CardActions sx={{justifyContent: "center"}}>
+              <Button
+                color="success"
+                size="large"
+                variant="outlined"
+                onClick={() => dispatch(setModalOpened(true))}
+              >
+                View Trailer
+              </Button>
+              <VideoPlayerModal
+                onClose={() => dispatch(setModalOpened(false))}
+              />
+              </CardActions>
+            </Card>
           </div>
-        </div>
-        <div style={{ width: "40%", height: "30%", marginRight: "20%" }}>
-          <h1>{movies.title}</h1>
-          <Typography style={{ marginBottom: "10px" }}>
-            {movies.original_title}
-          </Typography>
-          <Typography style={{ marginBottom: "10px" }}>
-            {movies.description}
-          </Typography>
-          <Typography style={{ marginBottom: "10px" }}>
-            Director: {movies.director}
-          </Typography>
-          <Typography style={{ marginBottom: "10px" }}>
-            Producer: {movies.producer}
-          </Typography>
-          <Typography style={{ marginBottom: "10px" }}>
-            Release date: {movies.release_date}
-          </Typography>
-          <Typography style={{ marginBottom: "10px" }}>
-            Running time: {movies.running_time}
-          </Typography>
-          <Typography style={{ marginBottom: "10px" }}>
-            Rating Rotten tommatoes: {movies.rt_score}
-          </Typography>
-        </div>
-      </div>
+          <div style={{ marginTop: "15px" }}>
+            <Card sx={{ height: "100%" }}>
+              <CardContent>
+                <Typography variant="h5" sx={{ marginBottom: "10px" }}>
+                  {movie.title}
+                </Typography>
+                <Typography sx={{ marginBottom: "10px" }}>{movie.original_title}</Typography>
+                <Typography sx={{ marginBottom: "10px" }}>{movie.description}</Typography>
+                <Typography sx={{ marginBottom: "10px" }}>Director: {movie.director}</Typography>
+                <Typography sx={{ marginBottom: "10px" }}>Producer: {movie.producer}</Typography>
+                <Typography sx={{ marginBottom: "10px" }}>Release date: {movie.release_date}</Typography>
+                <Typography sx={{ marginBottom: "10px" }}>Running time: {movie.running_time}</Typography>
+                <Typography sx={{ marginBottom: "10px" }}>
+                  Rating Rotten tommatoes: {movie.rt_score}
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+        </Grid>
+        )}
+      </Container>
+      <Footer/>
     </AuthorisedPage>
   );
 }

@@ -2,20 +2,21 @@ import { Box, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchCatalogGhibli } from "../fetchers/fetchCatalogGhibli";
 import { loadCatalog } from "../store/actions/loadCatalog";
+import { setMovies } from "../store/slice/catalog";
 import { GhibliCard } from "./GhibliCard";
 
 export const GhibliGrid = () => {
   const { movies } = useSelector((state) => state.catalog);
   const dispatch = useDispatch();
 
-  const load = useCallback(() => {
-    dispatch(loadCatalog());
+  useEffect(() => {
+    fetchCatalogGhibli().then((data) => {
+      dispatch(setMovies(data));
+    });
   }, [dispatch]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
 
   return (
     <>

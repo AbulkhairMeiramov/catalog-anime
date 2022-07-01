@@ -9,7 +9,6 @@ import {
 import { Container } from "@mui/system";
 import React, { useState } from "react";
 import { dataQuiz } from "../utils/dataQuiz";
-import "./Quiz.css";
 
 export const Quiz = () => {
   const data = dataQuiz;
@@ -69,7 +68,9 @@ export const Quiz = () => {
                 <Typography></Typography>
               </CardContent>
               <CardActions>
-                <Button onClick={refresh}>Refresh</Button>
+                <Button color="success" 
+                  sx={{ borderRadius: "15px" }} 
+                  onClick={refresh}>Refresh</Button>
               </CardActions>
             </div>
           ) : (

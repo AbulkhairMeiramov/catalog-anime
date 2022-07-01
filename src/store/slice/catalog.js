@@ -12,6 +12,9 @@ export const catalogSlice = createSlice({
     setMovies(state, action) {
       state.movies = action.payload;
     },
+    setMovie(state, action) {
+      state.movie = action.payload;
+    },
     setSearch(state, action) {
       state.search = action.payload;
     },
@@ -24,7 +27,7 @@ export const catalogSlice = createSlice({
   },
 });
 
-export const { setMovies, setSearch, setError, setModalOpened } =
+export const { setMovies, setMovie, setSearch, setError, setModalOpened } =
   catalogSlice.actions;
 
 export const catalogReducer = catalogSlice.reducer;

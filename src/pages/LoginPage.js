@@ -47,7 +47,7 @@ export const LoginPage = () => {
         <LoginForm onAuthSubmit={handleAuthSubmit} />
         <p style={{ textAlign: "left", color: "white" }}>
           No account?
-          <LinkBase to="/registration">Create one</LinkBase>
+          <LinkBase to="/registration"> Create one </LinkBase>
         </p>
       </div>
     </div>
