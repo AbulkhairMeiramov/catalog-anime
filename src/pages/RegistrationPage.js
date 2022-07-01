@@ -5,6 +5,7 @@ import { RegistrationForm } from "../components/RegistrationForm";
 import { LinkBase } from "../components/styles/LinkBase";
 import { signUpUser } from "../fetchers/signUpUser";
 import { setToken } from "../store/slice/auth";
+import "./RegistrationPage.css";
 
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
@@ -25,28 +26,12 @@ export const RegistrationPage = () => {
   );
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)`,
-        backgroundColor: "#388e3c",
-        overFlow: "auto",
-        minHeight: "100vh",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center top",
-      }}
-    >
-      <div
-        style={{
-          paddingTop: "14%",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
+    <div className="background-registration">
+      <div className="background-registration-direction">
         <RegistrationForm onUserCreated={handleUserCreated} />
-        <p style={{ textAlign: "left", color: "white" }}>
+        <p className="background-registration-link-to-register">
           Already registered?
-          <LinkBase to="/login">Sign In</LinkBase>
+          <LinkBase to="/login"> Sign In </LinkBase>
         </p>
       </div>
     </div>

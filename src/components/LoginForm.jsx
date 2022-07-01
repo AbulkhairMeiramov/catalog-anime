@@ -31,7 +31,7 @@ export const LoginForm = ({ onAuthSubmit }) => {
 
   return (
     <LoginWrapper>
-      <h3>Please Log In</h3>
+      <h3>Authorization</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl sx={{ width: "100%", mb: 1 }}>
           <TextField
@@ -55,7 +55,7 @@ export const LoginForm = ({ onAuthSubmit }) => {
           />
         </FormControl>
         <FormControl sx={{ width: "100%", mb: 1 }}>
-          <Button type="submit" variant="outlined">
+          <Button style={{ color: "green" }} type="submit" variant="outlined">
             Login
           </Button>
         </FormControl>

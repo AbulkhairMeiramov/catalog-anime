@@ -84,7 +84,7 @@ export const RegistrationForm = ({ className, onUserCreated }) => {
         />
       </FormControl>
       <FormControl sx={{ width: "100%", mb: 1 }}>
-        <Button type="submit" variant="outlined">
+        <Button style={{ color: "green" }} type="submit" variant="outlined">
           Register
         </Button>
       </FormControl>
