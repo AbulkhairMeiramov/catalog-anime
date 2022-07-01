@@ -1,0 +1,73 @@
+@media screen and (min-width: 992px) and (max-width: 2000px) {
+  .background-registration {
+    background: url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)
+      60% 90% no-repeat;
+    background-size: 250px;
+    background-color: #388e3c;
+    overflow: auto;
+    min-height: 100vh;
+    background-position: top center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .background-registration-direction {
+    flex-direction: "column";
+  }
+
+  .background-registration-link-to-register {
+    text-align: center;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .background-registration {
+    background: url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)
+      60% 90% no-repeat;
+    background-size: 250px;
+    background-color: #388e3c;
+    overflow: auto;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .background-registration-direction {
+    flex-direction: column;
+  }
+
+  .background-registration-link-to-register {
+    text-align: center;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 100px) and (max-width: 767px) {
+  .background-registration {
+    background: url(https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_white-1.png)
+      60% 90% no-repeat;
+    background-size: 250px;
+    background-color: #388e3c;
+    overflow: auto;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .background-registration-direction {
+    flex-direction: column;
+  }
+
+  .background-registration-link-to-register {
+    text-align: center;
+    color: white;
+  }
+}
