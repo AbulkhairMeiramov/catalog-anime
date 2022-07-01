@@ -96,6 +96,7 @@ function MoviePage() {
             </Card>
           </div>
         </Grid>
+        
         )}
       </Container>
       <Footer/>

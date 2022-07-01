@@ -1,7 +1,7 @@
-import { Grid } from '@mui/material'
-import { Box, Container } from "@mui/material"
-import React from 'react'
-import { LinkBase } from './styles/LinkBase'
+import { Grid } from "@mui/material";
+import { Box, Container } from "@mui/material";
+import React from "react";
+import { LinkBase } from "./styles/LinkBase";
 
 export const Footer = () => {
   return (
@@ -15,19 +15,13 @@ export const Footer = () => {
         <Container maxWidth="md">
           <Grid container spacing={5}>
             <Grid item xs={12} sm={6} md={4}>
-              <Box borderBottom={1}>
-                <LinkBase to="/home">FAQs</LinkBase>
-              </Box>
+              <LinkBase to="/faqs">FAQs</LinkBase>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-              <Box borderBottom={1}>
-                <LinkBase to="/home">Contact Us</LinkBase>
-              </Box>
+              <LinkBase to="/faqs">Contact Us</LinkBase>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-              <Box borderBottom={1}>
-                <LinkBase to="/home">Copyright for Films</LinkBase>
-              </Box>
+              <LinkBase to="/home">Copyright for Films</LinkBase>
             </Grid>
           </Grid>
           <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
