@@ -55,7 +55,7 @@ export const LoginForm = ({ onAuthSubmit }) => {
           />
         </FormControl>
         <FormControl sx={{ width: "100%", mb: 1 }}>
-          <Button style={{ color: "green" }} type="submit" variant="outlined">
+          <Button type="submit" variant="outlined">
             Login
           </Button>
         </FormControl>
